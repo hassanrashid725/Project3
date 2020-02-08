@@ -3,6 +3,11 @@ python:
     - 3.6
 install:
     - pip install -r requirements.txt
+before_script:
+  - wget http://chromedriver.storage.googleapis.com/2.10/chromedriver_win32.zip
+  - unzip chromedriver_win32.zip -d /home/travis/virtualenv/python3.6/
+  - export CHROME_BIN=chromium-browser
+
 script:
     - python manage.py test
 addons:
