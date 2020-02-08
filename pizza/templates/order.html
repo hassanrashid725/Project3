@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}Order Placed!{% endblock %}
+
+{% block signupbtn %}{{message}}{% endblock %}
+
+{% block user %}{{user}}{% endblock %}
+
+{% block body %}
+<div class="background-shade" >
+<div class="tab">
+  <h1>Perfect! Your order has been placed! </h1>
+  <table>
+    <tr>
+      <th>Category</th>
+      <th>Item Name</th>
+      <th>Toppings/Extras</th>
+      <th>Size</th>
+      <th>Price</th>
+    </tr>
+    {% for order in orders %}
+    <tr>
+      <td>{{order.menuId.category}}</td>
+      <td>{{order.menuId.itemName}}</td>
+      {% if order.menuId.category.categoryName == "Subs" %}
+        <td>{% for topping in order.subsExtraId.all %}
+              <p>{{topping.name}}</p>
+            {% empty %}
+               None
+          {% endfor %}
+        </td>
+        {% else %}
+        <td>{% for topping in order.toppingsId.all %}
+              <p>{{topping}}</p>
+            {% empty %}
+               None
+          {% endfor %}
+        </td>
+      {% endif %}
+      <td>{{order.size}}</td>
+      <td>${{order.price}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <h4>Total Amount: ${{totalAmount}}</h4>
+  <button onclick="window.location.href = '{% url 'index' %}';" id="submit-btn" class="btn btn-primary">Back to Home Page</button>
+</div>
+</div>
+{% endblock %}
