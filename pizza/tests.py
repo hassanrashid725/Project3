@@ -11,11 +11,11 @@ from selenium import webdriver
 from .models import Menu, Toppings, Users, Orders, OrderDetails, ItemCategory, SubsExtra, Extras
 # Create your tests here.
 
-def file_uri(filename):
-    return pathlib.Path(os.path.abspath(str(filename))).as_uri()
-
-driver = webdriver.Chrome('/home/travis/virtualenv/python3.6.7/lib/python3.6/bin/chromedriver')
-
+# def file_uri(filename):
+#     return pathlib.Path(os.path.abspath(str(filename))).as_uri()
+#
+# driver = webdriver.Chrome('/home/travis/virtualenv/python3.6.7/lib/python3.6/bin/chromedriver')
+#
 class UserTestCase(TestCase):
 
     def setUp(self):
@@ -62,19 +62,19 @@ class UserTestCase(TestCase):
         response = self.client.get('/')
         self.assertEqual(response.context["user"], "Not Logged In")
 
-class WebpageTests(unittest.TestCase):
-
-    def test_size_toppings(self):
-        driver.get(file_uri("seleniumtest/index.html"))
-        mushrooms = driver.find_element_by_id("mushrooms")
-        olives = driver.find_element_by_id("olives")
-        large = driver.find_element_by_id("large")
-        AddCartBtn = driver.find_element_by_id("AddCartBtn")
-        mushrooms.click()
-        olives.click()
-        large.click()
-        AddCartBtn.click()
-        size = driver.execute_script("return window.localStorage.getItem('size');")
-        toppings = driver.execute_script("return window.localStorage.getItem('toppings');")
-        self.assertEqual(size,"large")
-        self.assertEqual(toppings,"Mushrooms,Olives")
+# class WebpageTests(unittest.TestCase):
+#
+#     def test_size_toppings(self):
+#         driver.get(file_uri("seleniumtest/index.html"))
+#         mushrooms = driver.find_element_by_id("mushrooms")
+#         olives = driver.find_element_by_id("olives")
+#         large = driver.find_element_by_id("large")
+#         AddCartBtn = driver.find_element_by_id("AddCartBtn")
+#         mushrooms.click()
+#         olives.click()
+#         large.click()
+#         AddCartBtn.click()
+#         size = driver.execute_script("return window.localStorage.getItem('size');")
+#         toppings = driver.execute_script("return window.localStorage.getItem('toppings');")
+#         self.assertEqual(size,"large")
+#         self.assertEqual(toppings,"Mushrooms,Olives")
