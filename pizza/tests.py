@@ -12,7 +12,7 @@ from .models import Menu, Toppings, Users, Orders, OrderDetails, ItemCategory, S
 # Create your tests here.
 
 def file_uri(filename):
-    return pathlib.Path(os.path.abspath(filename)).as_uri()
+    return str(pathlib.Path(os.path.abspath(filename)).as_uri())
 
 driver = webdriver.Chrome('/home/travis/virtualenv/python3.6.7/lib/python3.6/bin/chromedriver')
 # options = webdriver.ChromeOptions()
