@@ -3,12 +3,15 @@ python:
     - 3.6
 install:
     - pip install -r requirements.txt
-before_script:
-  - wget http://chromedriver.storage.googleapis.com/2.10/chromedriver_linux64.zip
-  - unzip chromedriver_linux64.zip -d /home/travis/virtualenv/python3.6/
-  - export CHROME_BIN=chromium-browser
-
-script:
-    - python manage.py test
 addons:
   chrome: stable
+before_install:
+  - pip install selenium
+  - wget https://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip -d test/driver/
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3
+script:
+  - python manage.py test
