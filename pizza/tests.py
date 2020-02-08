@@ -4,9 +4,9 @@ from django.contrib.auth.models import User, AnonymousUser
 import unittest
 from django.contrib.auth.signals import user_logged_in
 
-import os
+# import os
 # import pathlib
-from selenium import webdriver
+# from selenium import webdriver
 
 from .models import Menu, Toppings, Users, Orders, OrderDetails, ItemCategory, SubsExtra, Extras
 # Create your tests here.
