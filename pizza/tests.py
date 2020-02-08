@@ -5,7 +5,7 @@ import unittest
 from django.contrib.auth.signals import user_logged_in
 
 import os
-import pathlib
+# import pathlib
 from selenium import webdriver
 
 from .models import Menu, Toppings, Users, Orders, OrderDetails, ItemCategory, SubsExtra, Extras
