@@ -65,7 +65,7 @@ class UserTestCase(TestCase):
 class WebpageTests(unittest.TestCase):
 
     def test_size_toppings(self):
-        driver.get(file_uri("selenium/index.html"))
+        driver.get(file_uri("seleniumtest/index.html"))
         mushrooms = driver.find_element_by_id("mushrooms")
         olives = driver.find_element_by_id("olives")
         large = driver.find_element_by_id("large")
