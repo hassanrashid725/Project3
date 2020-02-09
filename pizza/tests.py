@@ -76,5 +76,5 @@ class WebpageTests(unittest.TestCase):
         AddCartBtn.click()
         size = driver.execute_script("return window.localStorage.getItem('size');")
         toppings = driver.execute_script("return window.localStorage.getItem('toppings');")
-        self.assertEqual(size,"large1")
+        self.assertEqual(size,"large")
         self.assertEqual(toppings,"Mushrooms,Olives")
