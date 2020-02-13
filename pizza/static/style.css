@@ -76,27 +76,41 @@ body {
   padding: 2rem;
   border-radius: 5px;
 }
+
 .banner-title {
   font-size: 3.4rem;
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
   margin-bottom: 3rem;
 }
- .banner-btn {
-  padding: 1rem 3rem;
-  text-transform: uppercase;
-  letter-spacing: var(--mainSpacing);
-  font-size: 2rem;
-  background: var(--nav-background);
-  color: var(--mainBlack);
-  border: 1px solid var(--primaryColor);
-  font-weight: bold;
-  transition: var(--mainTransition);
-  cursor: pointer;
+
+.banner-btn,.signin-btn {
+ padding: 1rem 3rem;
+ text-transform: uppercase;
+ letter-spacing: var(--mainSpacing);
+ font-size: 2rem;
+ background: var(--nav-background);
+ color: var(--mainBlack);
+ border: 1px solid var(--nav-background);
+ font-weight: bold;
+ transition: var(--mainTransition);
+ cursor: pointer;
 }
+
 .banner-btn:hover {
   background: black;
   color: var(--nav-background);
+}
+
+.signin-btn{
+  margin-top: 20px;
+  background: var(--mainBlack);
+  color: var(--mainWhite);
+}
+
+.signin-btn:hover{
+  text-decoration: none;
+  color: var(--mainWhite);
 }
 /* --------------- End of Hero ---------------- */
 /* --------------- Products ---------------- */
@@ -104,16 +118,8 @@ body {
 .products {
   padding: 4rem 0;
 }
-.section-title h2 {
-  color: var(--mainWhite);
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 5rem;
-  text-transform: capitalize;
-  letter-spacing: var(--mainSpacing);
-}
 
-.products h2{
+.section-title h2,.products h2{
   color: var(--mainWhite);
   text-align: center;
   font-size: 3rem;
@@ -301,7 +307,7 @@ font-weight: bold;
   right: 0;
   width: 100%;
   height: 100%;
-  overflow: scroll;
+  overflow: auto;
   z-index: 3;
   background: var(--mainBlack);
   /* background: rgb(231, 226, 221); */
@@ -370,11 +376,7 @@ font-weight: bold;
   color: grey;
   cursor: pointer;
 }
-.fa-chevron-up,
-.fa-chevron-down {
-  color: var(--nav-background);
-  cursor: pointer;
-} */
+
 /*---------- End of Cart Item -------------------- */
 
 .cart-footer {
@@ -437,25 +439,6 @@ tr,td,th{
 
 table{
   margin: 20px;
-}
-
-.signin-btn{
-  margin-top: 20px;
-  padding: 1rem 3rem;
-  text-transform: uppercase;
-  letter-spacing: var(--mainSpacing);
-  font-size: 1.8rem;
-  background: var(--mainBlack);
-  color: var(--mainWhite);
-  border: 1px solid var(--primaryColor);
-  font-weight: bold;
-  transition: var(--mainTransition);
-  cursor: pointer;
-}
-
-.signin-btn:hover{
-  text-decoration: none;
-  color: var(--mainWhite);
 }
 
 #tbtn{
